@@ -1,6 +1,7 @@
+import Layout from '@/layouts/index';
 import { Metadata } from 'next';
+import Head from 'next/head';
 import Script from 'next/script';
-import Layout from 'src/layouts';
 import './index.css';
 
 export const metadata: Metadata = {
@@ -11,10 +12,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <head>
-        <meta charSet="UTF-8" />
-        <link rel="icon" type="image/svg+xml" href="/wazy.svg" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <Head>
         <Script id="gtm-init" strategy="beforeInteractive">
           {`(function (w, d, s, l, i) {
             w[l] = w[l] || [];
@@ -27,7 +25,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             f.parentNode.insertBefore(j, f);
           })(window, document, 'script', 'dataLayer', 'GTM-MJ39V9Z6')`}
         </Script>
-      </head>
+      </Head>
       <body>
         <div id="root">
           <Layout>{children}</Layout>

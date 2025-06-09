@@ -2,11 +2,7 @@
   "compilerOptions": {
     "target": "ES2020",
     "useDefineForClassFields": true,
-    "lib": [
-      "ES2020",
-      "DOM",
-      "DOM.Iterable"
-    ],
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "module": "ESNext",
     "esModuleInterop": true,
     "skipLibCheck": true,
@@ -30,33 +26,10 @@
     ],
     "baseUrl": ".",
     "paths": {
-      "@/app/*": [
-        "./app/*"
-      ],
-      "@/assets/*": [
-        "./src/assets/*"
-      ],
-      "@/components/*": [
-        "./src/components/*"
-      ],
-      "@/hooks/*": [
-        "./src/hooks/*"
-      ],
-      "@/pages/*": [
-        "./src/pages/*"
-      ],
-      "@/utils/*": [
-        "./src/utils/*"
-      ],
-      "@/router": [
-        "./src/router"
-      ],
-      "@/constants": [
-        "./src/constants"
-      ],
-      "@/types/*": [
-        "./src/types/*"
-      ]
+      "@/assets/*": ["./assets/*"],
+      "@/hooks/*": ["./hooks/*"],
+      "@/layouts/*": ["./layouts/*"],
+      "@/constants": ["./constants"]
     }
   },
   "include": [
@@ -66,7 +39,5 @@
     "./next-env.d.ts",
     ".next/types/**/*.ts"
   ],
-  "exclude": [
-    "node_modules"
-  ]
+  "exclude": ["node_modules"]
 }

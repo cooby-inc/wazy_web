@@ -1,4 +1,4 @@
-/// <reference types="vite/client" />
+/// <reference types="next/client" />
 
 declare global {
   interface Window {

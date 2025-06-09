@@ -2,10 +2,12 @@ import { env } from '@/constants';
 import * as amplitude from '@amplitude/analytics-browser';
 import { useCallback } from 'react';
 
-const isProduction = env.ENVIRONMENT === 'production';
+const isProduction = process.env.NODE_ENV === 'production';
 
 async function initAmplitude() {
-  amplitude.init(env.AMPLITUDE_API_KEY, {
+  if (!env.NEXT_PUBLIC_AMPLITUDE_API_KEY) return;
+
+  amplitude.init(env.NEXT_PUBLIC_AMPLITUDE_API_KEY, {
     appVersion: env.APP_VERSION,
   });
 }

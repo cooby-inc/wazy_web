@@ -1,3 +1,4 @@
+'use client';
 import { WHATSAPP_WEB_LINK } from '@/constants';
 import useAmplitude, { ACTIONS } from '@/hooks/useAmplitude';
 import { Center, HStack, Spinner, Text } from '@chakra-ui/react';

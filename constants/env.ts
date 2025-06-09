@@ -1,4 +1,4 @@
-import packageJson from '@/app/../package.json';
+import packageJson from '../package.json';
 
 export default {
   APP_VERSION: packageJson.version,

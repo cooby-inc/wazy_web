@@ -3,33 +3,22 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://github.com/cooby-inc/wazy_web",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
-    "build:prod": "tsc -b && vite build --mode production",
-    "lint": "eslint .",
-    "preview": "vite preview"
+    "dev": "next dev --turbo",
+    "build": "NODE_ENV=production & next build"
   },
   "dependencies": {
     "@amplitude/analytics-browser": "^2.17.8",
     "@chakra-ui/react": "^3.20.0",
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0",
-    "react-router-dom": "^7.6.2"
+    "next": "^15.3.3",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
   },
   "devDependencies": {
-    "@eslint/js": "^9.25.0",
-    "@types/node": "^22.15.30",
-    "@types/react": "^19.1.2",
-    "@types/react-dom": "^19.1.2",
-    "@vitejs/plugin-react": "^4.4.1",
-    "eslint": "^9.25.0",
-    "eslint-plugin-react-hooks": "^5.2.0",
-    "eslint-plugin-react-refresh": "^0.4.19",
-    "globals": "^16.0.0",
-    "typescript": "~5.8.3",
-    "typescript-eslint": "^8.30.1",
-    "vite": "^6.3.5",
-    "vite-tsconfig-paths": "^5.1.4"
+    "@types/node": "^22.13.4",
+    "@types/react": "^19.0.8",
+    "@types/react-dom": "^19.0.3",
+    "typescript": "^5.7.3"
   }
 }

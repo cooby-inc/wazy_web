@@ -8,7 +8,7 @@ export default defineConfig(({ mode }) => {
     plugins: [react(), tsconfigPaths()],
     define: {
       APP_VERSION: JSON.stringify(env.npm_package_version),
-      AMPLITUDE_API_KEY: JSON.stringify(env.AMPLITUDE_API_KEY),
+      AMPLITUDE_API_KEY: JSON.stringify(env.VITE_AMPLITUDE_API_KEY),
       ENVIRONMENT: JSON.stringify(mode),
     },
   };

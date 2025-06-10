@@ -1,6 +1,6 @@
 {
   "name": "wazy_web",
-  "private": true,
+  "private": false,
   "version": "0.0.0",
   "type": "module",
   "homepage": "https://github.com/cooby-inc/wazy_web",

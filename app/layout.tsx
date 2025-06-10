@@ -2,11 +2,12 @@ import Layout from '@/layouts/index';
 import { Metadata } from 'next';
 import Head from 'next/head';
 import Script from 'next/script';
-import './index.css';
+import './globals.css';
 
 export const metadata: Metadata = {
   title: 'Wazy',
   description: 'Wazy',
+  icons: '/favicon.ico',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

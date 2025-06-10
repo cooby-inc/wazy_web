@@ -7,7 +7,7 @@ import './globals.css';
 export const metadata: Metadata = {
   title: 'Wazy',
   description: 'Wazy',
-  icons: '/favicon.ico',
+  icons: '/wazy_web/favicon.ico',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

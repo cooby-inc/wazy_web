@@ -1,8 +1,12 @@
 'use client';
 
 import { ChakraProvider, defaultSystem } from '@chakra-ui/react';
-import { ReactNode } from 'react';
+import { ReactNode, Suspense } from 'react';
 
 export default function Layout({ children }: { children: ReactNode }) {
-  return <ChakraProvider value={defaultSystem}>{children}</ChakraProvider>;
+  return (
+    <Suspense fallback={<div>...</div>}>
+      <ChakraProvider value={defaultSystem}>{children}</ChakraProvider>
+    </Suspense>
+  );
 }

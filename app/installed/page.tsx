@@ -2,7 +2,7 @@
 import { WHATSAPP_WEB_LINK } from '@/constants';
 import useAmplitude, { ACTIONS } from '@/hooks/useAmplitude';
 import { Center, HStack, Spinner, Text } from '@chakra-ui/react';
-import { useCallback, useEffect } from 'react';
+import { useCallback, useEffect, useRef } from 'react';
 
 function redirectWithTrackingParams(url: string) {
   const a = document.createElement('a');
@@ -18,37 +18,25 @@ function redirectWithTrackingParams(url: string) {
 
 export default function InstallPage() {
   const { logEvent } = useAmplitude();
+  const isUsed = useRef(false);
   const redirectAfterTracking = useCallback(() => {
     redirectWithTrackingParams(WHATSAPP_WEB_LINK);
   }, []);
 
-  useEffect(
-    function sendTrackingEvent() {
-      const idleTimer = setTimeout(function onIdle() {
-        redirectAfterTracking();
-      }, 10 * 1000);
-
-      function checkComplete() {
-        clearTimeout(idleTimer);
-        redirectAfterTracking();
-      }
-
-      window?.dataLayer?.push({
-        event: ACTIONS.INSTALLED_EXTENSION,
-        eventCallback: checkComplete,
-        eventTimeout: 10 * 1000,
-      });
-
+  useEffect(() => {
+    function checkComplete() {
+      if (isUsed.current) return;
+      isUsed.current = true;
       logEvent({
         action: ACTIONS.INSTALLED_EXTENSION,
       })?.then(checkComplete);
+      redirectAfterTracking();
+    }
 
-      return () => {
-        clearTimeout(idleTimer);
-      };
-    },
-    [logEvent, redirectAfterTracking],
-  );
+    if (document.readyState === 'complete' || document.readyState === 'interactive') {
+      checkComplete();
+    }
+  }, []);
 
   return (
     <Center height="100svh" bg="#FFF">

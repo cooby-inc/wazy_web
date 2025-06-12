@@ -14,7 +14,7 @@ export default function UninstallPage() {
       if (isUsed.current) return;
       isUsed.current = true;
       logEvent({
-        action: ACTIONS.INSTALLED_EXTENSION,
+        action: ACTIONS.UNINSTALLED_EXTENSION,
         properties: {
           extensionVersion: searchParams.get('extensionVersion') || 'unknown',
           wawVersion: searchParams.get('wawVersion') || 'unknown',

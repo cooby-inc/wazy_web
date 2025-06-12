@@ -29,7 +29,7 @@ export default function InstallPage() {
       isUsed.current = true;
       logEvent({
         action: ACTIONS.INSTALLED_EXTENSION,
-      })?.then(checkComplete);
+      });
       redirectAfterTracking();
     }
 

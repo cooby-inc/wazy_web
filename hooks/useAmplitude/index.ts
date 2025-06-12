@@ -14,6 +14,7 @@ async function initAmplitude() {
 
 export const ACTIONS = {
   INSTALLED_EXTENSION: 'installed_extension',
+  UNINSTALLED_EXTENSION: 'uninstalled_extension',
 };
 
 type EventKeys = keyof typeof ACTIONS;

@@ -30,7 +30,7 @@ export default function InstallPage() {
       logEvent({
         action: ACTIONS.INSTALLED_EXTENSION,
       });
-      redirectAfterTracking();
+      setTimeout(redirectAfterTracking, 3000);
     }
 
     if (document.readyState === 'complete' || document.readyState === 'interactive') {

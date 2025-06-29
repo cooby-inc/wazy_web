@@ -5,7 +5,10 @@ import { useCallback } from 'react';
 const isProduction = process.env.NODE_ENV === 'production';
 
 async function initAmplitude() {
-  if (!env.NEXT_PUBLIC_AMPLITUDE_API_KEY) return;
+  if (!env.NEXT_PUBLIC_AMPLITUDE_API_KEY) {
+    console.warn('Amplitude API key is not set');
+    return;
+  }
 
   amplitude.init(env.NEXT_PUBLIC_AMPLITUDE_API_KEY, {
     appVersion: env.APP_VERSION,
@@ -37,10 +40,14 @@ function useAmplitude() {
 
     if (!payload.action) return;
 
+    console.log('hasInitialized', hasInitialized);
+
     if (!hasInitialized) {
       await initAmplitude();
       hasInitialized = true;
     }
+
+    console.log('hasInitialized', hasInitialized);
 
     const { action, properties = {} } = payload;
 

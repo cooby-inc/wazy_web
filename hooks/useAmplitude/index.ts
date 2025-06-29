@@ -40,14 +40,10 @@ function useAmplitude() {
 
     if (!payload.action) return;
 
-    console.log('hasInitialized', hasInitialized);
-
     if (!hasInitialized) {
       await initAmplitude();
       hasInitialized = true;
     }
-
-    console.log('hasInitialized', hasInitialized);
 
     const { action, properties = {} } = payload;
 

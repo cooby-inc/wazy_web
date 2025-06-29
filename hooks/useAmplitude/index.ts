@@ -9,6 +9,7 @@ async function initAmplitude() {
 
   amplitude.init(env.NEXT_PUBLIC_AMPLITUDE_API_KEY, {
     appVersion: env.APP_VERSION,
+    defaultTracking: true,
   });
 }
 
@@ -43,7 +44,7 @@ function useAmplitude() {
 
     const { action, properties = {} } = payload;
 
-    amplitude.track(action, properties);
+    amplitude.logEvent(action, properties);
   }, []);
 
   return { logEvent };

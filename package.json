@@ -6,7 +6,7 @@
   "homepage": "https://github.com/cooby-inc/wazy_web",
   "scripts": {
     "dev": "next dev --turbo",
-    "build": "NODE_ENV=production & next build"
+    "build": "next build"
   },
   "dependencies": {
     "@amplitude/analytics-browser": "^2.17.8",
